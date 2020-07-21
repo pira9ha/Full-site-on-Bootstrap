@@ -1,0 +1,35 @@
+/* Table */
+td {
+    color: #008b8b;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.table__date {
+    color: black;
+}
+
+/* Table end */
+
+#ok {
+    text-align: center;
+    color: green;
+}
+
+/* Footer start */
+footer {
+    display: flex;
+    margin: auto;
+    justify-content: end;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+
+.footer__text {
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 35px;
+    padding: 16px;
+}
+
+/* Footer end */
