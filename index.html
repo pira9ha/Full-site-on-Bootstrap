@@ -29,9 +29,12 @@
   </head>
 
   <body>
+    <!-- Header -->
     <header class="heder">
       <div class="content">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav
+          class="navbar navbar-expand-lg navbar-inverse navbar-fixed-top navbar-dark bg-dark"
+        >
           <a class="navbar-brand" href="#">НЛК</a>
           <button
             class="navbar-toggler"
@@ -46,7 +49,7 @@
           </button>
 
           <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-12">
               <li class="nav-item active">
                 <a class="nav-link" href="#"
                   >Портфолио <span class="sr-only">(current)</span></a
@@ -63,8 +66,10 @@
         </nav>
       </div>
     </header>
+    <!-- Header end -->
 
     <main>
+      <!-- Jumbotron -->
       <div class="jumbotron jumbotron-fluid">
         <div class="container">
           <div class="row justify-content-start">
@@ -75,18 +80,25 @@
                 добавлять свои научные работы, получать информацию об их
                 уникальности и смотреть отзывы ваших научных руководителей.
               </p>
-              <a class="btn btn-primary btn-lg" href="#" role="button"
-                >Добавить работу</a
+              <button
+                type="button"
+                class="btn btn-info"
+                data-toggle="modal"
+                data-target="#add-new"
               >
+                Добавить работу
+              </button>
             </div>
           </div>
         </div>
       </div>
+      <!-- Jumbotron end -->
 
+      <!-- Card -->
       <div class="card-column">
         <div class="container">
           <div class="row">
-            <div class="col-lg-5 col-md-7 col-xs-6">
+            <div class="col-lg-5 col-md-7 col-xs-6 mb-4">
               <div class="card">
                 <div class="card-header">
                   Ваш профиль
@@ -94,16 +106,23 @@
                 <div class="card-body">
                   <h5 class="card-title">Сергей Павлович Фролов</h5>
                   <p class="card-text">
-                    <strong> Научная степень:</strong> Магистр. <br />
+                    <strong> Научная степень:</strong> Магистр <br />
                     <strong> Специализация: </strong>Инвестиционные проблемы
-                    экономически развивающихся рынков.
+                    экономически развивающихся рынков
                   </p>
-                  <a href="#" class="btn btn-primary">Редактировать</a>
+                  <button
+                    type="button"
+                    class="btn btn-info"
+                    data-toggle="modal"
+                    data-target="#change"
+                  >
+                    Редактировать
+                  </button>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-5 col-xs-6">
+            <div class="col-lg-4 col-md-5 col-xs-6 mb-4">
               <div class="card">
                 <div class="card-header">
                   Статистика
@@ -121,9 +140,11 @@
           </div>
         </div>
       </div>
+      <!-- Card end-->
 
+      <!-- Table -->
       <div class="container">
-        <div class="block">
+        <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -212,12 +233,210 @@
           </table>
         </div>
       </div>
+      <!-- Table end-->
 
+      <!-- Footer -->
       <footer>
         <div class="footer__text">
           © Научный личный кабинет. Все права защищены
         </div>
       </footer>
+      <!-- Footer end -->
+
+      <!-- Modal Window first -->
+      <div
+        class="modal fade"
+        id="add-new"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="add-new"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark" style="color: #fff;">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Добавить работу
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                style="color: #fff;"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form class="was-validated">
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Название работы</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="recipient-name"
+                    placeholder="Название"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Введите название
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <select class="custom-select" required>
+                    <option value="">Выберите язык</option>
+                    <option value="1">Английский</option>
+                    <option value="2">Русский</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите один из вариантов</div>
+                </div>
+
+                <div class="form-group">
+                  <select class="custom-select" required>
+                    <option value="">Научный руководитель</option>
+                    <option value="1">Асаншоева А.М.</option>
+                    <option value="2">Васильев М.Г.</option>
+                    <option value="3">Леонидов В.Б.</option>
+                    <option value="4">Шаляпина В.С.</option>
+                  </select>
+                  <div class="invalid-feedback">Выберите один из вариантов</div>
+                </div>
+
+                <div class="custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    id="validatedCustomFile"
+                    required
+                  />
+                  <label class="custom-file-label" for="validatedCustomFile"
+                    >Выберите файл
+                  </label>
+                  <div class="invalid-feedback">
+                    Выберите файл
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label"
+                    >Описание</label
+                  >
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary btn-info"
+                data-toggle="modal"
+                data-target="#ok"
+              >
+                Добавить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Window first end -->
+
+      <!-- Modal Window second -->
+      <div
+        class="modal fade"
+        id="change"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="change"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-dark" style="color: #fff;">
+              <h5 class="modal-title" id="exampleModalLabel">
+                Редактировать
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+                style="color: #fff;"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label">Имя</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="recipient-name"
+                    placeholder="Имя"
+                    value="Сергей Павлович Фролов"
+                    required
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Научная степень</label
+                  >
+                  <select class="custom-select" required>
+                    <option value="">Бакалавр</option>
+                    <option value="1" selected>Магистр</option>
+                    <option value="2">Кандидат наук</option>
+                    <option value="3">Доктор наук</option>
+                    <option value="4">Специалист</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label"
+                    >Специализация</label
+                  >
+                  <textarea class="form-control" id="message-text">
+Инвестиционные проблемы экономически развивающихся рынков</textarea
+                  >
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-primary btn-info"
+                data-toggle="modal"
+                data-target="#ok"
+              >
+                Изменить
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Window second end -->
+
+      <!-- Small Modal -->
+      <div
+        class="modal fade bd-example-modal-sm"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="mySmallModalLabel"
+        aria-hidden="true"
+        id="ok"
+      >
+        <div class="modal-dialog modal-sm bg-success">
+          <div class="modal-content">
+            Ваша работа отправлена на рассмотрение!
+          </div>
+        </div>
+      </div>
+      <!-- Small Modal end -->
     </main>
   </body>
 </html>
