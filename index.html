@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -24,7 +24,7 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Portfolio</title>
   </head>
 
@@ -56,7 +56,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Рейтинг</a>
+                <a class="nav-link" href="rating.html">Рейтинг</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Помощь</a>
@@ -144,6 +144,18 @@
 
       <!-- Table -->
       <div class="container">
+        <h2>Поиск по таблице</h2>
+        <p>
+          Вы можете воспользоваться удобным поиском, просто начните вводить
+          интересующую вас работу:
+        </p>
+        <input
+          class="form-control"
+          id="myInput"
+          type="text"
+          placeholder="..."
+        />
+        <br />
         <div class="table-responsive">
           <table class="table table-bordered">
             <thead>
@@ -154,7 +166,7 @@
                 <th scope="col">Уникальность</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
               <tr>
                 <td scope="row">
                   Привлечение инвестиций как фактор развития экономики
@@ -432,11 +444,22 @@
       >
         <div class="modal-dialog modal-sm bg-success">
           <div class="modal-content">
-            Ваша работа отправлена на рассмотрение!
+            Отправлено на рассмотрение!
           </div>
         </div>
       </div>
       <!-- Small Modal end -->
     </main>
+
+    <script>
+      $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+          var value = $(this).val().toLowerCase();
+          $("#myTable tr").filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+          });
+        });
+      });
+    </script>
   </body>
 </html>
