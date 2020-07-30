@@ -22,6 +22,10 @@ ul.nav-pills {
     font-size: 95%;
 }
 
+.nav_hor {
+    display: none;
+}
+
 h4 {
     margin-top: 2em;
 }
@@ -41,4 +45,14 @@ a {
     color: rgb(63, 63, 63);
     display: inline-flex;
     align-self: flex-start;
+}
+
+@media (max-width: 1600px) {
+    .nav_hor {
+        display: inline-block;
+    }
+
+    .scrollspy {
+        display: none;
+    }
 }
